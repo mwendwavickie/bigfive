@@ -1,0 +1,48 @@
+.custom-footer {
+background-color: #222;
+color: white;
+padding: 30px 0;
+font-size: 16px;
+}
+
+.footer-section {
+margin-bottom: 20px;
+}
+
+.footer-icon {
+margin-right: 8px;
+color: #ffcc00;
+}
+
+.social-icons {
+display: flex;
+gap: 15px;
+margin-top: 10px;
+}
+
+.social-icon {
+font-size: 24px;
+transition: color 0.3s ease-in-out;
+}
+
+.facebook:hover {
+color: #3b5998;
+}
+
+.twitter:hover {
+color: #1da1f2;
+}
+
+.instagram:hover {
+color: #e4405f;
+}
+
+hr {
+border-top: 1px solid #555;
+margin: 20px 0;
+}
+
+.text-center {
+text-align: center;
+margin-top: 10px;
+}
