@@ -1,0 +1,16 @@
+.navbar {
+    padding: 16px;
+    font-size: 18px;
+}
+.brand-logo {
+    font-weight: bold;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+}
+.nav-item {
+    display: flex;
+    align-items: flex-end;
+    font-weight: 500;
+    margin-right: 15px;
+}
