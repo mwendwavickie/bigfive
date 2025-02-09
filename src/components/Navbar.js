@@ -7,7 +7,7 @@ import './Navbar.css';
  
 const NavigationBar = () => {
     return (
-        <Navbar bg="dark" variant="dark" expand="lg" className='navbar'>
+        <Navbar  expand="lg" className='navbar'>
             <Navbar.Brand as={Link} to="/" className='brand-logo'>
             BIG FIVE
             </Navbar.Brand>
