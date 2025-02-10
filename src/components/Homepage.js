@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Container, Carousel, Button, Row, Col, Card } from 'react-bootstrap';
 import  ProductListing from "./ProductListing";
+import Testimonials from "./Testimonials";
 
 const HomePage = () => {
     const [featuredProducts, setFeaturedProducts] = useState([]);
@@ -88,11 +89,9 @@ const HomePage = () => {
 
             <ProductListing />
             <hr />
+            <Testimonials />
 
-            {/* Testimonials Section */}
-            <section className="testimonials">
-                <h2>Customer Reviews</h2>
-            </section>
+            
             <hr />
 
             <Footer />
