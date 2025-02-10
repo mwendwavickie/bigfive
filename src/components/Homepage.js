@@ -1,21 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { Container, Carousel, Button, Row, Col, Card, Badge } from 'react-bootstrap';
 import NavigationBar from "./Navbar";
 import Footer from "./Footer";
-import { useState, useEffect } from "react";
-import axios from "axios";
-import { Container, Carousel, Button, Row, Col, Card } from 'react-bootstrap';
-import  ProductListing from "./ProductListing";
+import "./HomePage.css";
+import ProductListing from "./ProductListing";
 import Testimonials from "./Testimonials";
+import ProductCard from "./ProductCard";
+
 
 const HomePage = () => {
     const [featuredProducts, setFeaturedProducts] = useState([]);
     const [offers, setOffers] = useState([]);
+    const [cart, setCart] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchFeaturedProducts = async () => {
           try {
             const response = await axios.get('http://localhost:5000/products');
-            setFeaturedProducts(response.data.slice(0, 4)); // Show first 4 items
+            setFeaturedProducts(response.data.slice(0, 4));
           } catch (error) {
             console.error('Error fetching featured products:', error.message);
           }
@@ -24,7 +29,7 @@ const HomePage = () => {
         const fetchOffers = async () => {
           try {
             const response = await axios.get('http://localhost:5000/products');
-            setOffers(response.data.slice(0, 4)); // Show first 4 deals
+            setOffers(response.data.slice(0, 4));
           } catch (error) {
             console.error('Error fetching current deals:', error.message);
           }
@@ -32,19 +37,25 @@ const HomePage = () => {
     
         fetchFeaturedProducts();
         fetchOffers();
-      }, []);
-    
+    }, []);
+
+    const addToCart = (product) => {
+        setCart([...cart, product]);
+    };
+
+    const removeFromCart = (productId) => {
+        setCart(cart.filter(product => product.id !== productId));
+    };
+
     return (
         <div>
-            <NavigationBar />
-
+            <NavigationBar cartCount={cart.length} />
             {/* Featured Products Carousel */}
             <Container className="mt-4">
-                
                 {featuredProducts.length > 0 ? (
                     <Carousel>
                         {featuredProducts.map((product) => (
-                            <Carousel.Item key={product.id}>
+                            <Carousel.Item key={product.id} onClick={() => navigate(`/products/${product.id}`)}>
                                 <img
                                     className="d-block w-100 carousel-image"
                                     src={product.image}
@@ -52,8 +63,9 @@ const HomePage = () => {
                                 />
                                 <Carousel.Caption>
                                     <h3>{product.name}</h3>
-                                    <p>{product.description}</p>
-                                    <Button variant="warning" href={`/products/${product.id}`}>Shop Now</Button>
+                                    <p><strong>{product.price}</strong></p>
+                                    <Button className="detailsbtn" onClick={() => navigate(`/products/${product.id}`)}>View Details</Button>
+                                    <Button className="cartbtn" onClick={() => addToCart(product)}>Add to Cart</Button>
                                 </Carousel.Caption>
                             </Carousel.Item>
                         ))}
@@ -71,11 +83,12 @@ const HomePage = () => {
                         offers.map((offer) => (
                             <Col md={3} key={offer.id}>
                                 <Card className="offer-card">
-                                    <Card.Img variant="top" src={offer.image} />
+                                    <Card.Img variant="top" src={offer.image} onClick={() => navigate(`/products/${offer.id}`)} />
                                     <Card.Body>
                                         <Card.Title>{offer.name}</Card.Title>
                                         <Card.Text>{offer.price}</Card.Text>
-                                        <Button variant="success" href={`/products/${offer.id}`}>Grab Deal</Button>
+                                        <Button variant="success" onClick={() => addToCart(offer)}>Add to Cart</Button>
+                                        
                                     </Card.Body>
                                 </Card>
                             </Col>
@@ -86,14 +99,10 @@ const HomePage = () => {
                 </Row>
             </Container>
             <hr />
-
             <ProductListing />
             <hr />
             <Testimonials />
-
-            
             <hr />
-
             <Footer />
         </div>
     );
