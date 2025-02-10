@@ -1,77 +1,88 @@
 {
     "products": {
-        "body butters": [
+        "bodybutters": [
             {
                 "id": 1,
                 "name": "Coffee Body Butter",
                 "price": "Ksh.1500",
                 "description": "A rich, nourishing body butter infused with organic coffee extract to deeply moisturize and rejuvenate your skin.",
-                "image": "https://example.com/coffee-body-butter.jpg"
+                "image": "https://example.com/coffee-body-butter.jpg",
+                "rating": 4.5
             },
             {
                 "id": 2,
                 "name": "Cocoa Body Butter",
                 "price": "Ksh.2000",
                 "description": "An ultra-hydrating cocoa-infused body butter that provides long-lasting moisture and a natural glow.",
-                "image": "https://example.com/cocoa-body-butter.jpg"
+                "image": "https://example.com/cocoa-body-butter.jpg",
+                "rating":4
             },
             {
                 "id": 3,
                 "name": "Shea Butter Bliss",
                 "price": "Ksh.2000",
                 "description": "A luxurious shea butter blend for ultimate hydration and smooth skin.",
-                "image": "https://example.com/shea-butter-bliss.jpg"
+                "image": "https://example.com/shea-butter-bliss.jpg",
+                "rating":4.8
             },
             {
                 "id": 4,
                 "name": "Almond Body Butter",
                 "price": "Ksh.3000",
                 "description": "Deeply nourishing almond-infused body butter with a subtle nutty scent.",
-                "image": "https://example.com/almond-body-butter.jpg"
+                "image": "https://example.com/almond-body-butter.jpg",
+                "rating":4.6
             }
         ],
         "coffee": [
             {
-                "id": 5,
+                "id": 1,
                 "name": "Kenyan Coffee - Classic Roast",
                 "price": "Ksh.2500",
                 "description": "A smooth and bold classic roast made from premium Kenyan coffee beans.",
-                "image": "https://example.com/kenyan-coffee-classic.jpg"
+                "image": "https://example.com/kenyan-coffee-classic.jpg",
+                "rating": 4.7
             },
             {
-                "id": 6,
+                "id": 2,
                 "name": "Kenyan Coffee - Vanilla Flavor",
                 "price": "Ksh.2500",
                 "description": "A delightful blend of Kenyan coffee infused with natural vanilla essence.",
-                "image": "https://example.com/kenyan-coffee-vanilla.jpg"
+                "image": "https://example.com/kenyan-coffee-vanilla.jpg",
+                "rating":4.5
+
             },
             {
-                "id": 7,
+                "id": 3,
                 "name": "Kenyan Coffee - Caramel Flavor",
                 "price": "Ksh.3500",
                 "description": "Rich caramel-infused Kenyan coffee for a sweet and bold taste experience.",
-                "image": "https://example.com/kenyan-coffee-caramel.jpg"
+                "image": "https://example.com/kenyan-coffee-caramel.jpg",
+                "rating": 4.8
             },
             {
-                "id": 8,
+                "id": 4,
                 "name": "Kenyan Coffee - Hazelnut Flavor",
                 "price": "Ksh.4000",
                 "description": "A nutty and aromatic Kenyan coffee blend with smooth hazelnut flavor.",
-                "image": "https://example.com/kenyan-coffee-hazelnut.jpg"
+                "image": "https://example.com/kenyan-coffee-hazelnut.jpg",
+                "rating":4.4
             },
             {
-                "id": 9,
+                "id": 5,
                 "name": "Kenyan Coffee - Mocha Flavor",
                 "price": "Ksh.3500",
                 "description": "A perfect fusion of chocolate and coffee flavors in a premium Kenyan blend.",
-                "image": "https://example.com/kenyan-coffee-mocha.jpg"
+                "image": "https://example.com/kenyan-coffee-mocha.jpg",
+                "rating": 4.7
             },
             {
-                "id": 10,
+                "id": 6,
                 "name": "Kenyan Coffee - Cinnamon Spice",
                 "price": "Ksh.3000",
                 "description": "A warm and spicy cinnamon-infused Kenyan coffee for a cozy experience.",
-                "image": "https://example.com/kenyan-coffee-cinnamon.jpg"
+                "image": "https://example.com/kenyan-coffee-cinnamon.jpg",
+                "rating": 4.3
             }         
 
         ]
