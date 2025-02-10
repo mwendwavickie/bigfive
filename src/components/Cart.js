@@ -1,54 +1,64 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import { Card, Button, ListGroup, Badge } from "react-bootstrap";
-import { FaShoppingCart, FaTrash } from "react-icons/fa";
+import React from 'react';
+import { Card, Button, Row, Col, Container } from 'react-bootstrap';
+import { FaTrash, FaShoppingCart } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
+import './CartPage.css'; // Import CSS file for custom styles
 
 const CartPage = ({ cart, setCart }) => {
     const navigate = useNavigate();
 
     // Remove item from cart
     const removeFromCart = (productId) => {
-        setCart(cart.filter((product) => product.id !== productId));
+        const updatedCart = cart.filter(item => item.id !== productId);
+        setCart(updatedCart);
     };
 
-    // Calculate total price
-    const totalPrice = cart.reduce((acc, product) => acc + product.price, 0);
-
     return (
-        <div className="container mt-4">
-            <h2 className="mb-3">
-                <FaShoppingCart /> Shopping Cart
-            </h2>
+        <Container className="cart-container">
+            <h2 className="text-center mb-4">🛒 Your Shopping Cart</h2>
 
+            {/* If cart is empty, show message */}
             {cart.length === 0 ? (
-                <div className="text-center">
-                    <h4>Your cart is empty!</h4>
-                    <Button variant="primary" onClick={() => navigate("/products")}>
-                        Browse Products
+                <div className="empty-cart">
+                    <FaShoppingCart size={50} className="cart-icon" />
+                    <p>Your cart is empty!</p>
+                    <Button variant="primary" onClick={() => navigate('/')}>
+                        Go Shopping
                     </Button>
                 </div>
             ) : (
-                <ListGroup>
-                    {cart.map((product) => (
-                        <ListGroup.Item key={product.id} className="d-flex justify-content-between align-items-center">
-                            <div>
-                                <img src={product.image} alt={product.name} style={{ width: "50px", marginRight: "10px" }} />
-                                {product.name} - ${product.price}
-                            </div>
-                            <Button variant="danger" size="sm" onClick={() => removeFromCart(product.id)}>
-                                <FaTrash /> Remove
-                            </Button>
-                        </ListGroup.Item>
-                    ))}
-                </ListGroup>
-            )}
+                <>
+                    {/* Display products in the cart */}
+                    <Row>
+                        {cart.map((product) => (
+                            <Col key={product.id} xs={12} md={6} lg={4}>
+                                <Card className="cart-item">
+                                    <Card.Img variant="top" src={product.image} className="cart-image" />
+                                    <Card.Body>
+                                        <Card.Title>{product.name}</Card.Title>
+                                        <Card.Text className="price">💲{product.price}</Card.Text>
+                                        <Button 
+                                            variant="danger" 
+                                            className="remove-btn"
+                                            onClick={() => removeFromCart(product.id)}
+                                        >
+                                            <FaTrash /> Remove
+                                        </Button>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+                        ))}
+                    </Row>
 
-            {cart.length > 0 && (
-                <div className="mt-3">
-                    <h4>Total Price: <Badge bg="success">${totalPrice.toFixed(2)}</Badge></h4>
-                </div>
+                    {/* Checkout Button */}
+                    <div className="checkout-container">
+                        <Button variant="success" className="checkout-btn" onClick={() => alert("Proceed to Checkout")}>
+                            Proceed to Checkout
+                        </Button>
+                    </div>
+                </>
             )}
-        </div>
+        </Container>
     );
 };
 
