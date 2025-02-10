@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { Card, Button, Form, Row, Col, Badge } from 'react-bootstrap';
+import { Card, Button, Form, Row, Col } from 'react-bootstrap';
 import { FaTh, FaList, FaShoppingCart } from 'react-icons/fa';
 import "./ProductListing.css";
 
-const ProductListing = () => {
+const ProductListing = ({ cart = [], setCart }) => {  // Ensure cart defaults to an empty array
     const [products, setProducts] = useState([]);
     const [gridView, setGridView] = useState(true);
     const [sortOption, setSortOption] = useState('');
-    const [cart, setCart] = useState([]);
 
-    const navigate = useNavigate(); // Added navigation hook
+    const navigate = useNavigate();
 
     // Fetch products from API
     useEffect(() => {
@@ -35,17 +34,19 @@ const ProductListing = () => {
 
     // Add product to cart
     const addToCart = (product) => {
-        setCart([...cart, product]);
-    };
+        if (!Array.isArray(cart)) return; // Ensure cart is an array before modifying
 
-    // Remove product from cart
-    const removeFromCart = (productId) => {
-        setCart(cart.filter(product => product.id !== productId));
+        // Check if the product is already in the cart using filter()
+        const isInCart = cart.filter(item => item.id === product.id).length > 0;
+
+        if (!isInCart) {
+            setCart([...cart, product]); // Add product if not in cart
+        }
     };
 
     // Navigate to ProductCard.js when a product is clicked
     const handleProductClick = (product) => {
-        navigate(`/product/${product.id}`, { state: { product } }); //Sends product data
+        navigate(`/product/${product.id}`, { state: { product } });
     };
 
     return (
@@ -69,27 +70,33 @@ const ProductListing = () => {
 
             {/* Product Cards */}
             <Row className={gridView ? "grid-view" : "list-view"}>
-                {sortedProducts.map((product) => (
-                    <Col key={product.id} xs={12} md={gridView ? 4 : 12}>
-                        <Card className="mb-3 product-card" onClick={() => handleProductClick(product)}> {/* Clickable card */}
-                            <Card.Img variant="top" src={product.image} />
-                            <Card.Body>
-                                <Card.Title>{product.name}</Card.Title>
-                                <Card.Text>{product.price}</Card.Text>
-                                <Button variant="success" onClick={(e) => { e.stopPropagation(); addToCart(product); }}>
-                                    <FaShoppingCart /> Add to Cart
-                                </Button>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                ))}
-            </Row>
+                {sortedProducts.map((product) => {
+                    const isInCart = Array.isArray(cart) && cart.filter(item => item.id === product.id).length > 0;
 
-            {/* Cart Indicator */}
-            <div className="cart-indicator">
-                <FaShoppingCart size={24} />
-                {cart.length > 0 && <Badge bg="danger" className="cart-count">{cart.length}</Badge>}
-            </div>
+                    return (
+                        <Col key={product.id} xs={12} md={gridView ? 4 : 12}>
+                            {/* Clickable Card for Navigation */}
+                            <Card className="mb-3 product-card" onClick={() => handleProductClick(product)}>
+                                <Card.Img variant="top" src={product.image} />
+                                <Card.Body>
+                                    <Card.Title>{product.name}</Card.Title>
+                                    <Card.Text>{product.price}</Card.Text>
+                                    {/* Prevents event bubbling on Add to Cart button */}
+                                    <Button
+                                        variant={isInCart ? "secondary" : "success"}
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            addToCart(product);
+                                        }}
+                                    >
+                                        <FaShoppingCart /> {isInCart ? "Added" : "Add to Cart"}
+                                    </Button>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    );
+                })}
+            </Row>
         </div>
     );
 };

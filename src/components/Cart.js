@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, Button, Row, Col, Container } from 'react-bootstrap';
 import { FaTrash, FaShoppingCart } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import NavigationBar from './Navbar';
 import './CartPage.css'; // Import CSS file for custom styles
 
 const CartPage = ({ cart, setCart }) => {
@@ -14,6 +15,9 @@ const CartPage = ({ cart, setCart }) => {
     };
 
     return (
+        <div>
+            <NavigationBar cart={cart}/>
+        
         <Container className="cart-container">
             <h2 className="text-center mb-4">🛒 Your Shopping Cart</h2>
 
@@ -59,6 +63,7 @@ const CartPage = ({ cart, setCart }) => {
                 </>
             )}
         </Container>
+        </div>
     );
 };
 
