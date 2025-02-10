@@ -5,7 +5,7 @@
                 "name": "Coffee Body Butter",
                 "price": "Ksh.1500",
                 "description": "A rich, nourishing body butter infused with organic coffee extract to deeply moisturize and rejuvenate your skin.",
-                "image": "CinnamonButter.jpg",
+                "image": "https://img.freepik.com/premium-photo/beauty-cream-texture-white-lotion-moisturizer-skin-care-cosmetic-product-smear-background_926199-1279338.jpg?w=740",
                 "rating": 4.5
             },
             {
@@ -13,7 +13,7 @@
                 "name": "Cocoa Body Butter",
                 "price": "Ksh.2000",
                 "description": "An ultra-hydrating cocoa-infused body butter that provides long-lasting moisture and a natural glow.",
-                "image": "Coffeecreambutter.jpg",
+                "image": "https://img.freepik.com/free-vector/hazelnut-spread-cream_528282-93.jpg?ga=GA1.1.840305773.1733864372&semt=ais_incoming",
                 "rating":4.1
             },
             {
@@ -21,7 +21,7 @@
                 "name": "Shea Butter Bliss",
                 "price": "Ksh.2000",
                 "description": "A luxurious shea butter blend for ultimate hydration and smooth skin.",
-                "image": "/home/bunn/Documents/bigfive/src/assets/stock-photo-bodywhip-also-known-body-butter-skin-care-moisturizer-cream-wood.jpeg",
+                "image": "https://img.freepik.com/premium-photo/jar-lotion-sits-wooden-surface_99096-18584.jpg?w=740",
                 "rating":4.8
             },
             {
@@ -29,7 +29,7 @@
                 "name": "Almond Body Butter",
                 "price": "Ksh.3000",
                 "description": "Deeply nourishing almond-infused body butter with a subtle nutty scent.",
-                "image": "https://example.com/almond-body-butter.jpg",
+                "image": "https://img.freepik.com/free-photo/ecofriendly-beauty-product_23-2150669120.jpg?t=st=1739155538~exp=1739159138~hmac=d8d3129c53e69f13dba0d933d21afb3abd14390df9bbd3c9e5395dea1e08eb09&w=360",
                 "rating":4.6
             },
        
@@ -38,7 +38,7 @@
                 "name": "Kenyan Coffee - Classic Roast",
                 "price": "Ksh.2500",
                 "description": "A smooth and bold classic roast made from premium Kenyan coffee beans.",
-                "image": "https://example.com/kenyan-coffee-classic.jpg",
+                "image": "https://img.freepik.com/free-vector/hand-drawn-coffee-label-template_23-2149821531.jpg?t=st=1739155014~exp=1739158614~hmac=6bcb68323fc25c5b0bc8a21a7615dd046933d47edfe47fa031717bc4e0882c83&w=740",
                 "rating": 4.7
             },
             {
@@ -46,7 +46,7 @@
                 "name": "Kenyan Coffee - Vanilla Flavor",
                 "price": "Ksh.2500",
                 "description": "A delightful blend of Kenyan coffee infused with natural vanilla essence.",
-                "image": "https://example.com/kenyan-coffee-vanilla.jpg",
+                "image": "https://img.freepik.com/premium-photo/macadamia-body-lotion-skin-cream_926199-3814413.jpg?w=826",
                 "rating":4.5
 
             },
@@ -55,7 +55,7 @@
                 "name": "Kenyan Coffee - Caramel Flavor",
                 "price": "Ksh.3500",
                 "description": "Rich caramel-infused Kenyan coffee for a sweet and bold taste experience.",
-                "image": "https://example.com/kenyan-coffee-caramel.jpg",
+                "image": "https://img.freepik.com/free-vector/hand-drawn-coffee-label-design-template_23-2149814317.jpg?t=st=1739154946~exp=1739158546~hmac=5e9231439983f1354d36d4982c27d49f11072d8243903f0ee59488fe6a7bc800&w=740",
                 "rating": 4.8
             },
             {
@@ -63,7 +63,7 @@
                 "name": "Kenyan Coffee - Hazelnut Flavor",
                 "price": "Ksh.4000",
                 "description": "A nutty and aromatic Kenyan coffee blend with smooth hazelnut flavor.",
-                "image": "https://example.com/kenyan-coffee-hazelnut.jpg",
+                "image": "https://img.freepik.com/free-vector/drink-ad-concept_52683-35700.jpg?t=st=1739154892~exp=1739158492~hmac=02f5cfb1e4dcd4a31765ff7907805acb762f495718185bcf24b8c5bad2026f72&w=740",
                 "rating":4.4
             },
             {
@@ -71,7 +71,7 @@
                 "name": "Kenyan Coffee - Mocha Flavor",
                 "price": "Ksh.3500",
                 "description": "A perfect fusion of chocolate and coffee flavors in a premium Kenyan blend.",
-                "image": "https://example.com/kenyan-coffee-mocha.jpg",
+                "image": "https://img.freepik.com/free-vector/fresh-coffee-ad_52683-34407.jpg?t=st=1739154844~exp=1739158444~hmac=e728476a023347aad648d041aaf53248d36998cab25c26ca34e0b882290074d6&w=740",
                 "rating": 4.7
             },
             {
@@ -79,7 +79,7 @@
                 "name": "Kenyan Coffee - Cinnamon Spice",
                 "price": "Ksh.3000",
                 "description": "A warm and spicy cinnamon-infused Kenyan coffee for a cozy experience.",
-                "image": "https://example.com/kenyan-coffee-cinnamon.jpg",
+                "image": "https://img.freepik.com/free-vector/good-morning-coffee-drink-product-ad_52683-33931.jpg?t=st=1739154773~exp=1739158373~hmac=6593b52ebad8848e49638c94bb62ef30a71aa2a8168cc0f5b70c1899c0f9ab90&w=740",
                 "rating": 4.3
             }         
 
