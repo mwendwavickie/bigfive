@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { Container, Card, Button } from "react-bootstrap";
 
-const ProductCard = ({ products, cart, setCart }) => {
-    const { id } = useParams();
-    const product = products.find(p => p.id === parseInt(id));
+const ProductCard = ({ cart, setCart }) => {
+    const location = useLocation();
+    const product = location.state?.product; // Get product data from state
     const [quantity, setQuantity] = useState(1);
 
     if (!product) {
-        return <p>Product not found.</p>;
+        return <Container className="mt-5"><p>Product not found.</p></Container>;
     }
 
     const addToCart = () => {
@@ -18,6 +18,7 @@ const ProductCard = ({ products, cart, setCart }) => {
         } else {
             setCart([...cart, { ...product, quantity: 1 }]);
         }
+        setQuantity(quantity + 1);
     };
 
     const removeFromCart = () => {
@@ -27,20 +28,22 @@ const ProductCard = ({ products, cart, setCart }) => {
         } else {
             setCart(cart.filter(item => item.id !== product.id));
         }
+        setQuantity(Math.max(quantity - 1, 1));
     };
 
     return (
         <Container className="mt-5">
+            <Button as={Link} to="/" variant="secondary" className="ms-2">Back to Home</Button>
             <Card>
-                <Card.Img variant="top" src={product.image} />
+                <Card.Img variant="top" src={product.image} alt={product.name} />
                 <Card.Body>
                     <Card.Title>{product.name}</Card.Title>
                     <Card.Text>{product.description}</Card.Text>
-                    <Card.Text><strong>Price: ${product.price * quantity}</strong></Card.Text>
+                    <Card.Text><strong>Price: {product.price}</strong></Card.Text>
                     <Card.Text><strong>Quantity: {quantity}</strong></Card.Text>
                     <Button variant="success" onClick={addToCart}>Add to Cart</Button>
                     <Button variant="danger" onClick={removeFromCart} className="ms-2">Remove</Button>
-                    <Button as={Link} to="/" variant="secondary" className="ms-2">Back to Home</Button>
+                    
                 </Card.Body>
             </Card>
         </Container>
