@@ -41,8 +41,9 @@
     margin-right: 50px; 
     background-color: transparent;
     color: black;
-
+    border-radius: 50%;
 }
+
 
 
 @keyframes bounce {

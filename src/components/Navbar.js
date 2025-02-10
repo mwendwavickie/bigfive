@@ -3,6 +3,7 @@ import { Navbar,Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import { FaShoppingCart,FaBoxOpen } from 'react-icons/fa';
+import ProductListing from './ProductListing';
 
 
  
@@ -16,7 +17,7 @@ const NavigationBar = () => {
             <Navbar.Collapse id="basic-navbar-nav">
 
                 <Nav className="me-auto">
-                    <Nav.Link as={Link} to="/products" className='nav-item'>
+                    <Nav.Link as={Link} to="/ProductListing" className='nav-item'>
                     <FaBoxOpen className="nav-icon" />Products
                     </Nav.Link>
 

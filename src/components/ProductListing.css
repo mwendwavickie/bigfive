@@ -28,3 +28,11 @@
   .cartBtn {
     color: rgb(209, 92, 92);
   }
+  .form {
+    border-radius: 50px;
+    height: 40px;
+  }
+  .formbtn {
+    margin-bottom: 5px;
+    
+  }

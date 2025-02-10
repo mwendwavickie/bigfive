@@ -64,7 +64,7 @@ const HomePage = () => {
                                 <Carousel.Caption>
                                     <h3>{product.name}</h3>
                                     <p><strong>{product.price}</strong></p>
-                                    <Button className="detailsbtn" onClick={() => navigate(`/products/${product.id}`)}>View Details</Button>
+                                    <Button className="detailsbtn" onClick={() => navigate(`products/${product.id}`)}>View Details</Button>
                                     <Button className="cartbtn" onClick={() => addToCart(product)}>Add to Cart</Button>
                                 </Carousel.Caption>
                             </Carousel.Item>
