@@ -1,0 +1,30 @@
+.product-card {
+    transition: transform 0.3s;
+  }
+  .product-card:hover {
+    transform: scale(1.05);
+  }
+  .product-img {
+    height: 250px;
+    object-fit: cover;
+  }
+  
+  .grid-view .product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .list-view .product-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .list-view .product-img {
+    width: 150px;
+    height: 150px;
+    margin-right: 20px;
+  }
+  .cartBtn {
+    color: rgb(209, 92, 92);
+  }
