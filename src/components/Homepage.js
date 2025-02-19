@@ -5,7 +5,7 @@ import { Container, Carousel, Button, Row, Col, Card } from 'react-bootstrap';
 import NavigationBar from "./Navbar";
 import Footer from "./Footer";
 import "./HomePage.css";
-import ProductListing from "./ProductListing";
+import ProductListing from "./Screens/ProductListing";
 import Testimonials from "./Testimonials";
 
 const HomePage = () => {
@@ -60,7 +60,10 @@ const HomePage = () => {
                                     <Button className="detailsbtn" onClick={() => handleProductClick(product)}>View Details</Button>
                                     <Button
                                         className={`cartbtn ${cart.some(item => item.id === product.id) ? "disabled" : ""}`}
-                                        onClick={() => addToCart(product)}
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            addToCart(product);
+                                        }}
                                         disabled={cart.some(item => item.id === product.id)}
                                     >
                                         {cart.some(item => item.id === product.id) ? "Added to Cart" : "Add to Cart"}

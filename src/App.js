@@ -2,10 +2,10 @@ import React from 'react';
 import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import HomePage from '../src/components/Homepage';
-import ProductListing from './components/ProductListing';
-import ProductCard from './components/ProductCard';
+import ProductListing from './components/Screens/ProductListing';
+import ProductCard from './components/Screens/ProductCard';
 import NavigationBar from './components/Navbar';
-import CartPage from './components/Cart';
+import CartPage from './components/Screens/Cart';
 
 const App = () => {
   const [cart, setCart] = useState([]); // Cart state

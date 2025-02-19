@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Button, Row, Col, Container } from 'react-bootstrap';
 import { FaTrash, FaShoppingCart } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
-import NavigationBar from './Navbar';
+import NavigationBar from '../Navbar';
 import './CartPage.css'; // Import CSS file for custom styles
 
 const CartPage = ({ cart, setCart }) => {

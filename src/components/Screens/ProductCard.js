@@ -2,7 +2,7 @@ import React, { useState , useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Container, Card, Button, Badge } from "react-bootstrap";
 import { FaPlus, FaMinus, FaShoppingCart,FaTrash } from "react-icons/fa";
-import NavigationBar from "./Navbar";
+import NavigationBar from "../Navbar";
 
 const ProductCard = ({ cart, setCart }) => {
     const navigate = useNavigate();
