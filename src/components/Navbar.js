@@ -24,6 +24,14 @@ const NavigationBar = ({ cart}) => { // Ensure cart has a default value
                         {cart.length > 0 && <Badge bg="danger" className="ms-1">{cart.length}</Badge>}
                     </Nav.Link>
                 </Nav>
+                <Nav className='mr-auto'>
+                    <Nav.Link as={Link} to="/Login" className='nav-login'>
+                    Login
+                    </Nav.Link>
+                    <Nav.Link as={Link} to="/SignUp" className='nav-signup'>
+                    SignUp
+                    </Nav.Link>
+                </Nav>
             </Navbar.Collapse>
         </Navbar>
     );
