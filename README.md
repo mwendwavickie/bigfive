@@ -1,4 +1,4 @@
-Project Overview
+## Project Overview 
 
 This project is an e-commerce product showcase built using React and Bootstrap. It features:
 
@@ -10,9 +10,9 @@ Individual product detail pages with an add-to-cart functionality.
 
 A shopping cart system with a counter and interactive feedback.
 
-#Setup Instructions
+## Setup Instructions 
 
-Prerequisites
+# Prerequisites #
 
 Ensure you have the following installed on your system:
 
@@ -22,12 +22,12 @@ npm or yarn
 
 Git
 
-Cloning the Repository
+# Cloning the Repository
 
-git clone <url>
+git clone <https://github.com/mwendwavickie/bigfive.git>
 cd bigfive
 
-Dependency Installation
+# Dependency Installation
 
 Install Required Packages
 
@@ -39,7 +39,13 @@ Or using Yarn:
 
 yarn install
 
-Running the Project
+# Start the JSON Server
+This project uses json-server for a mock backend. Start it with:
+
+npx json-server --watch db.json --port 5000
+
+
+# Running the Project
 
 To start the development server, run:
 
