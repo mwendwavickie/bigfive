@@ -7,6 +7,7 @@ import Footer from "./Footer";
 import "./HomePage.css";
 import ProductListing from "./Screens/ProductListing";
 import Testimonials from "./Testimonials";
+import ProductDetail from "./Screens/ProductDetail";
 
 const HomePage = () => {
     const [featuredProducts, setFeaturedProducts] = useState([]);
@@ -36,7 +37,7 @@ const HomePage = () => {
     
     // Navigate to ProductCard.js when a product is clicked
     const handleProductClick = (product) => {
-        navigate(`/product/${product.id}`, { state: { product } });
+        navigate(`/products/${product.id}`, { state: { product } });
     };
 
     return (

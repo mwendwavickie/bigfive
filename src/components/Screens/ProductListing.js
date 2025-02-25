@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Card, Button, Form, Row, Col } from 'react-bootstrap';
 import { FaTh, FaList, FaShoppingCart,FaArrowDown,FaArrowUp} from 'react-icons/fa';
 import "./ProductListing.css";
-import NavigationBar from '../Navbar';
+import ProductDetail from './ProductDetail';
 
 const ProductListing = () => {  
     const [products, setProducts] = useState([]);
@@ -45,7 +45,7 @@ const ProductListing = () => {
 
     // Navigate to ProductCard.js when a product is clicked
     const handleProductClick = (product) => {
-        navigate(`/products/${product.id}`);
+        navigate(`/products/${product.id}`,{ state: { product } });
     };
 
     return (

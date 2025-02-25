@@ -2,13 +2,12 @@
     transition: transform 0.3s;
 }
 .product-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 .product-img {
     height: 250px;
     object-fit: cover;
 }
-  
 .grid-view .product-card {
     display: flex;
     flex-direction: column;
@@ -34,12 +33,11 @@
     margin-left: 20px;
 }
 .formbtn {
-  margin-bottom: 5px;
- 
+    margin-bottom: 5px;
 }
 .sort-btn {
-  align-items: flex-start;
-  display: flex;
-  justify-content: space-between;
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-between;
 }
-   
+
